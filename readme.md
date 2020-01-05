@@ -21,5 +21,6 @@
 - cp .env.example .env
 - composer install
 - php aritsan key:generate
+- php aritsan migrate
 - php aritsan serve
 - Done!
