@@ -13,3 +13,13 @@
 - php artisan migrate:fresh
 - php artisan migrate:refresh
 - php artisan route:list
+
+### Installation
+
+- git clone https://github.com/bm-member/bm-blog3.git FOLDER_NAME
+- cd FOLDER_NAME
+- cp .env.example .env
+- composer install
+- php aritsan key:generate
+- php aritsan serve
+- Done!
