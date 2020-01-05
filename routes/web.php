@@ -14,6 +14,9 @@ Route::get('admin', function() {
     return view('admin.layouts.master');
 });
 
-Route::get('admin/post', function() {
-    return view('admin.post.index');
-});
+Route::get('admin/post', 'Admin\PostController@index');
+Route::get('admin/post/create', 'Admin\PostController@create');
+Route::post('admin/post', 'Admin\PostController@store');
+Route::get('admin/post/{id}/delete', 'Admin\PostController@destroy');
+Route::get('admin/post/{id}/edit', 'Admin\PostController@edit');
+Route::post('admin/post/{id}/edit', 'Admin\PostController@update');
