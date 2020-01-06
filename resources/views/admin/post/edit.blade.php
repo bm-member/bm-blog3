@@ -27,7 +27,8 @@
                                 {{ $post->content }}
                             </textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="submit" class="btn btn-primary mr-2">Update</button>
+                        <a href="{{ url('admin/post') }}" class="btn btn-secondary">Back</a>
                     </form>
                 </div>
             </div>

@@ -26,7 +26,7 @@
                     {{ $post->title }}
                 </div>
                 <div class="card-body">
-                    {{ $post->content }}
+                    {{ substr($post->content, 0, 100) }}
                 </div>
                 <div class="card-footer text-right">
                     <a href="#" class="btn btn-info">
@@ -45,6 +45,9 @@
             </div>
         </div>
         @endforeach
+    </div>
+    <div class="row justify-content-center">
+        {{ $posts->links() }}
     </div>
 </div>
 @endsection

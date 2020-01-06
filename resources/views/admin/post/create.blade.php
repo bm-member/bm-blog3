@@ -26,6 +26,8 @@
                           <textarea name="content" class="form-control"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Create</button>
+                        <a href="{{ url('admin/post') }}" class="btn btn-secondary">Back</a>
+                        {{-- <a href="{{ url()->previous() }}" class="btn btn-secondary">Back</a> --}}
                     </form>
                 </div>
             </div>

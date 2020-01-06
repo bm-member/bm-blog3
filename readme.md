@@ -13,6 +13,10 @@
 - php artisan migrate:fresh
 - php artisan migrate:refresh
 - php artisan route:list
+- php artisan make:request
+- php artisan make:seeder
+- php artisan db:seed --class=PostSeeder
+- php artisan migrate:fresh --seed
 
 ### Installation
 
