@@ -20,7 +20,7 @@
 - cd FOLDER_NAME
 - cp .env.example .env
 - composer install
-- php aritsan key:generate
-- php aritsan migrate
-- php aritsan serve
+- php artisan key:generate
+- php artisan migrate
+- php artisan serve
 - Done!
