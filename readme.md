@@ -1,5 +1,4 @@
 # BM BLog 
-
 - php artisan serve
 - php artisan serve --port=3000
 - php artisan make:controller
@@ -17,6 +16,23 @@
 - php artisan make:seeder
 - php artisan db:seed --class=PostSeeder
 - php artisan migrate:fresh --seed
+- php artisan make:middle AuthWare
+
+### Carbon
+
+```
+toDateString()
+toFormattedDateString()
+toFormattedDateTimeString()
+diffForHumans()
+format()
+```
+```
+Ref:
+https://carbon.nesbot.com/docs/
+https://www.php.net/manual/en/function.date.php
+```
+
 
 ### Installation
 
@@ -28,3 +44,34 @@
 - php artisan migrate
 - php artisan serve
 - Done!
+
+### Laravel 
+
+### Done
+
+- Route
+- View (Blade)
+- Controller
+- Model
+- Authentication
+- Paginate
+- Seeder
+- Migration
+- Faker
+- Eloqument
+- Middleware
+
+### Do
+
+- image upload
+- role and permission (Gate)
+- tinker
+- factory
+- API
+- Vuejs
+- Linux Command Line
+- Host (Digital Ocean)
+- Git and Github
+- Localizaiton
+- Gmail Sending
+- Payment (Stripe)

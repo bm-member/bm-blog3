@@ -11,11 +11,23 @@
         <div class="col-md-6">
             <h3>All Posts</h3>
         </div>
-        <div class="col-md-6 text-right">
+        <div class="col-md-2 text-right">
             <a href="{{ url('admin/post/create') }}" class="btn btn-primary">
                 <i class="fas fa-plus-circle"></i>
                 Create
             </a>
+        </div>
+        <div class="col-md-4">
+            <form action="{{ url('admin/post') }}" method="get">
+                <div class="input-group input-group">
+                    <input type="text" name="q" class="form-control float-right" 
+                    placeholder="Search">
+    
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
     <div class="row">
@@ -29,7 +41,7 @@
                     {{ substr($post->content, 0, 100) }}
                 </div>
                 <div class="card-footer text-right">
-                    <a href="#" class="btn btn-info">
+                    <a href="{{ url("admin/post/$post->id") }}" class="btn btn-info">
                         <i class="fas fa-eye"></i>
                         View
                     </a>

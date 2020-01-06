@@ -6,6 +6,7 @@ use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 use App\Http\Controllers\Controller;
+use App\User;
 
 
 class PostController extends Controller
@@ -17,8 +18,15 @@ class PostController extends Controller
      */
     public function index()
     {
-        // $posts = Post::all();
-        $posts = Post::orderBy('id', 'desc')->paginate(6);
+        if(request()->q) {
+            $posts = Post::orderBy('id', 'desc')
+                ->where('title', 'like', '%' . request()->q . '%')
+                ->paginate(6);
+        } else {
+            // $posts = Post::all();
+            $posts = Post::orderBy('id', 'desc')->paginate(6);
+        }
+        
         return view('admin.post.index', compact('posts'));
     }
 
@@ -65,7 +73,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        return view('admin.post.show', compact('post'));
     }
 
     /**
@@ -76,7 +85,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $post = Post::find($id);
+        $post = Post::findOrFail($id);
         return view('admin.post.edit', compact('post'));
     }
 
@@ -89,7 +98,7 @@ class PostController extends Controller
      */
     public function update(PostRequest $request, $id)
     {
-        $post = Post::find($id);
+        $post = Post::findOrFail($id);
         $post->title = $request->title;
         $post->content = $request->content;
         $post->save();
@@ -104,7 +113,7 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $post = Post::find($id);
+        $post = Post::findOrFail($id);
         $post->delete();
         return redirect('admin/post')->with('status','Post Deleted.');
     }
