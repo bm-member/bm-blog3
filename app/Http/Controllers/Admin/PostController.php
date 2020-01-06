@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Post;
 use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest;
 use App\Http\Controllers\Controller;
 
 
@@ -36,8 +37,16 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
+
+        // $request->validate([
+        //     'title' => 'required|min:3',
+        //     'content' => 'required'
+        // ],[
+        //    'title.required' => 'ခေါင်းစဥ်ထည့်ရန်လိုအပ်သည်။'
+        // ]);
+
         $post = new Post();
         $post->title = $request->title;
         $post->content = $request->content;
@@ -77,7 +86,7 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PostRequest $request, $id)
     {
         $post = Post::find($id);
         $post->title = $request->title;

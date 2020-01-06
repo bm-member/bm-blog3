@@ -7,6 +7,11 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
+            @include('alerts')
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-10">
             <div class="card">
                 <h3 class="card-header">Create Post</h3>
                 <div class="card-body">
