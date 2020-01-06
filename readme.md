@@ -33,7 +33,6 @@ https://carbon.nesbot.com/docs/
 https://www.php.net/manual/en/function.date.php
 ```
 
-
 ### Installation
 
 - git clone https://github.com/bm-member/bm-blog3.git FOLDER_NAME
@@ -42,6 +41,7 @@ https://www.php.net/manual/en/function.date.php
 - composer install
 - php artisan key:generate
 - php artisan migrate
+- php artisan db:seed
 - php artisan serve
 - Done!
 
