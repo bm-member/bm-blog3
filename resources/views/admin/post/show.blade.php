@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'View Post')
+@section('title', $post->title)
     
 @section('content')
     

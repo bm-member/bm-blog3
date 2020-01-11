@@ -15,3 +15,9 @@ Route::get('current-user', function() {
     echo 'DATE is:'. Auth::user()->created_at . '<Br>';
     echo 'DATE is:'. Auth::user()->updated_at . '<Br>';
 });
+
+Route::get('test', function() {
+    unlink('C:\xampp\htdocs\blog\public\upload\profile\user.png');
+});
+
+Route::get('test-gate', 'HomeController@gateAdminOrAuthor');

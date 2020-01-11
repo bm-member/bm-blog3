@@ -14,9 +14,9 @@ class UserSeeder extends Seeder
         $faker = Faker\Factory::create();
 
         $persons = [
-            ['name' => 'Mg Mg', 'email' => 'mgmg@bm.com'],
-            ['name' => 'Aung Aung', 'email' => 'agag@bm.com'],
-            ['name' => 'TunTun', 'email' => 'example@bm.com'],
+            ['name' => 'Mg Mg', 'email' => 'mgmg@bm.com' , 'role' => 'admin'],
+            ['name' => 'Aung Aung', 'email' => 'agag@bm.com' , 'role' => 'author'],
+            ['name' => 'TunTun', 'email' => 'example@bm.com', 'role' => 'guest'],
         ];
 
         foreach($persons as $person) {
@@ -24,6 +24,7 @@ class UserSeeder extends Seeder
             $user->name = $person['name'];
             $user->email = $person['email'];
             $user->password = bcrypt('123123123');
+            $user->role = $person['role'];
             $user->save();
         }
 

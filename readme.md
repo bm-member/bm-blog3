@@ -17,7 +17,9 @@
 - php artisan db:seed --class=PostSeeder
 - php artisan migrate:fresh --seed
 - php artisan make:middle AuthWare
-
+- php artisan tinker
+- php artisan make:factory PostFactory
+- php artisan help make:factory
 ### Carbon
 
 ```
@@ -68,6 +70,7 @@ https://www.php.net/manual/en/function.date.php
 - tinker
 - factory
 - API
+- API Resource
 - Vuejs
 - Linux Command Line
 - Host (Digital Ocean)
@@ -75,3 +78,7 @@ https://www.php.net/manual/en/function.date.php
 - Localizaiton
 - Gmail Sending
 - Payment (Stripe)
+
+###
+
+- delete old profile image if exist
