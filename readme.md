@@ -3,6 +3,7 @@
 - php artisan serve --port=3000
 - php artisan make:controller
 - php artisan make:controller -r
+- php artisan make:controller --api
 - php artisan make:model -m
 - mysql -u root -p
 - show databases;
@@ -62,13 +63,13 @@ https://www.php.net/manual/en/function.date.php
 - Faker
 - Eloqument
 - Middleware
-
-### Do
-
 - image upload
 - role and permission (Gate)
 - tinker
 - factory
+
+### Do
+
 - API
 - API Resource
 - Vuejs
