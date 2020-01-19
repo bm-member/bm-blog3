@@ -14,7 +14,7 @@ include 'test.php';
 Route::group([
     'prefix'=>'admin', 
     'namespace' => 'Admin', 
-    'middleware' => ['authware', 'can:isAdminOrAuthor']
+    'middleware' => ['authware']
 ], function() {
     Route::get('/', function() {
         return view('admin.layouts.master');
@@ -39,4 +39,7 @@ Route::group([
 });
 
 
+Route::get('getalluser', function () {
+    return App\User::all();
+});
 

@@ -62,10 +62,21 @@ Route::delete('post/{id}', function($id) {
 
 });
 
-Route::get('admin/post', 'API\PostController@index');
+Route::get('admin/post', 'API\PostController@index')->middleware('auth:api');
 Route::post('admin/post', 'API\PostController@store');
 Route::get('admin/post/{id}', 'API\PostController@show');
 Route::put('admin/post/{id}', 'API\PostController@update');
 Route::delete('admin/post/{id}', 'API\PostController@destroy');
 
 // Route::apiResource('admin/post', 'API\PostController');
+
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'auth'
+], function ($router) {
+    Route::get('admin/post', 'API\PostController@index');
+    Route::post('login', 'AuthController@login');
+    Route::post('logout', 'AuthController@logout');
+    Route::post('refresh', 'AuthController@refresh');
+    Route::post('me', 'AuthController@me');
+});

@@ -24,7 +24,9 @@ class UserResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'email' => $this->email,
-            'image' => $this->image
+            'image' => $this->image,
+            'status' => 'Success!',
+            'date' => $this->created_at->toFormattedDateString('d-M-Y')
         ];
     }
 }
